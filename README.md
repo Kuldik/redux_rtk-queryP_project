@@ -1,1 +1,1 @@
-# redux_rtk-queryP_project
+# redux_rtk-query_project
