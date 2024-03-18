@@ -1,5 +1,5 @@
 
-export const RecipeItem = () => {
+export function RecipeItem(recipe) {
   return (
     <div>
         <h2>
