@@ -14,7 +14,7 @@ function App() {
       }}/>
       <RecipeItem recipe={{
         name: 'Spagetti',
-        id: 3
+        id: 4
       }}/>
 
     </div>
