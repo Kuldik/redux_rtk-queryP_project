@@ -1,12 +1,12 @@
-import {RecipeItem} from './components/Recipe-item/RecipeItem.jsx'
-import {BsFillBookmarkHeartFill} from 'react-icons/bs'
-import {Header } from './components/Header/Header.jsx'
-
+import {RecipeItem } from './Recipe-item/RecipeItem.jsx'
+import {Header} from './header/Header.jsx'
+import { User } from './user/User'
 function App() {
 
   return (
     <section>
       <Header/>
+      <User/>
       <div>
         <RecipeItem recipe={{
           name: 'Lazania',
