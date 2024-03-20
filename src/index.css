@@ -45,4 +45,17 @@ section {
   background-image: linear-gradient(to right, #2d1818, #50548d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  align-items: center;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 40px;
+}
+
+@media (max-width: 400px) {
+  .items{
+    margin-left: 0;
+  }
 }

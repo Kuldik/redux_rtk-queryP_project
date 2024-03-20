@@ -5,25 +5,35 @@
   padding: 12px;
 }
 .header svg {
+  position: fixed;
+  top: 13px;
+  right: 375.5px;
+  font-size: 12px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 34px;
+}
+@media (max-width: 1200px) {
+  .header svg {
+    right: 17.5px;
+  }
 }
 .header span {
   position: fixed;
-  top: 27px;
-  right: 385.5px;
-  font-size: 12px;
+  top: 34px;
+  right: 387.5px;
+  font-size: 17px;
   color: white;
   background: #1ddfd8;
   border-radius: 50%;
   width: 15px;
   height: 15px;
+  padding: 2.5px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media (max-width: 1200px) {
   .header span {
-    right: 17.5px;
+    right: 28.5px;
   }
 }/*# sourceMappingURL=Header.module.css.map */

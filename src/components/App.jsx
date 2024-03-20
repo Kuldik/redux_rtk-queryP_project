@@ -9,14 +9,17 @@ function App() {
     <section>
       <Header/>
       <User/>
-      {isLoading ? <div className='loading'>Loading...</div> : 
-        data ? data.map((recipe) => 
-          <RecipeItem 
-            key={recipe.id} 
-            recipe={recipe}
-          />) 
-          : <div>No data</div>
-      }
+      <div className='items'>
+        {isLoading ? <div className='loading'>Loading...</div> : 
+          data ? data.map((recipe) => 
+            <RecipeItem 
+              key={recipe.id} 
+              recipe={recipe}
+            />) 
+            : <div>No data</div>
+        }
+      </div>
+      
       
     </section>
   )
