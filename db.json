@@ -29,12 +29,9 @@
       "id": "a5db",
       "name": "Bakewell tart",
       "image": "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg"
-    },
-    {
-      "id": "1b5d",
-      "name": "testName",
-      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fletsenhance.io%2F&psig=AOvVaw36RZS55v3KWWsjhei5_pzH&ust=1711034917769000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJjZ4O2gg4UDFQAAAAAdAAAAABAE"
     }
+
+
   ],
   "meals": [
     {
