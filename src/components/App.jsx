@@ -1,6 +1,6 @@
 import {RecipeItem } from './Recipe-item/RecipeItem.jsx'
 import {Header} from './header/Header.jsx'
-import { User } from './user/User'
+import  User  from './user/User'
 function App() {
 
   return (

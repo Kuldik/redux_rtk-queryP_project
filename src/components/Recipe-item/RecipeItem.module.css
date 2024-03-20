@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   border: 1px solid #4d4c4b;
-  max-width: 300px;
+  margin: 0 auto;
   margin-bottom: 1.5rem;
   margin-left: 1.3rem;
   margin-top: 1.3rem;
