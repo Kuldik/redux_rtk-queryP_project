@@ -8,7 +8,11 @@ export const recipeApi = api.injectEndpoints({
                 method: 'POST',
                 body: recipe
             }),
-            invalidatesTags: ['Recipe']
+            invalidatesTags: () => [
+                {
+                    type: 'Recipe',
+                }
+            ]
             }),
             renameRecipe: builder.mutation({
                 query: (recipe) => ({
