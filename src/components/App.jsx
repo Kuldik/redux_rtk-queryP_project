@@ -1,6 +1,7 @@
 import { useGetResipesQuery } from '../store/api/api.js'
 import {RecipeItem } from './Recipe-item/RecipeItem.jsx'
 import {Header} from './header/Header.jsx'
+import CreateRecipe from './mutations/create/CreateRecipe.jsx'
 import  User  from './user/User'
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
     <section>
       <Header/>
       <User/>
+      <CreateRecipe/>
+      
       <div className='items'>
         {isLoading ? <div className='loading'>Loading...</div> : 
           data ? data.map((recipe) => 
