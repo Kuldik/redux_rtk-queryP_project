@@ -1,26 +1,23 @@
+import { useGetResipesQuery } from '../store/api/api.js'
 import {RecipeItem } from './Recipe-item/RecipeItem.jsx'
 import {Header} from './header/Header.jsx'
 import  User  from './user/User'
-function App() {
 
+function App() {
+  const { isLoading, data} = useGetResipesQuery()
   return (
     <section>
       <Header/>
       <User/>
-      <div>
-        <RecipeItem recipe={{
-          name: 'Lazania',
-          id: 1
-        }}/>
-        <RecipeItem recipe={{
-          name: 'Cake',
-          id: 2
-        }}/>
-        <RecipeItem recipe={{
-          name: 'Spagetti',
-          id: 4
-        }}/>
-      </div>
+      {isLoading ? <div className='loading'>Loading...</div> : 
+        data ? data.map((recipe) => 
+          <RecipeItem 
+            key={recipe.id} 
+            recipe={recipe}
+          />) 
+          : <div>No data</div>
+      }
+      
     </section>
   )
 }
