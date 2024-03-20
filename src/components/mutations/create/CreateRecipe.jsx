@@ -1,22 +1,29 @@
 import { useState } from 'react'
 import styles from './CreateRecipe.module.css'
+import { useCreateRecipeMutation } from '../../../store/api/recipe.api'
 
 
 export default function CreateRecipe() {
 
-    const [recipe, setResipe] = useState({
+    const defaultValues = {
         name: '',
         image: '',
-    })
+    }
+
+    const [recipe, setResipe] = useState(defaultValues)
+
+    const [createRecipe] = useCreateRecipeMutation()
+    
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(recipe);
+        createRecipe(recipe).then(() => setResipe(defaultValues))
     }
 
   return (
     <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
+            <h1 className={styles.title}>Create new Recipe</h1>
             <label>
                 <input 
                     type="text" 
