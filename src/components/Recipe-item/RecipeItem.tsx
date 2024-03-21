@@ -2,9 +2,13 @@ import styles from './RecipeItem.module.css'
 import {useSelector} from 'react-redux'
 import { useActions } from '../../hooks/useActions'
 import { useFavorites } from '../../hooks/useFavorites'
+import { IRecipe } from '../../types/recipe.types'
+  
+interface IRecipeItem {
+  recipe: IRecipe
+}
 
-
-export function RecipeItem({recipe}) {
+export function RecipeItem({recipe}: IRecipeItem) {
   const {favorites } = useFavorites()
 
   const {toggleFavorite} = useActions()

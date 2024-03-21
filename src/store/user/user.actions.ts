@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import { IUser } from '../../types/user.types'
 
-const fetchUserById = (userId)  => 
+const fetchUserById = (userId: number): Promise<IUser>  => 
     new Promise((reolve) => {
         setTimeout(() => {
             reolve({id: 1, name: 'Alex'})
@@ -8,12 +9,12 @@ const fetchUserById = (userId)  =>
     })
 
 
-export const getUserById = createAsyncThunk('users/getUserById', async(userId, thunkApi) => {
+export const getUserById = createAsyncThunk<IUser, number>('users/getUserById', async(userId, thunkApi) => {
     try {
         const response = await fetchUserById(userId)
         return response 
     } catch (error) {
-        thunkApi.rejectWithValue(error)
+        return thunkApi.rejectWithValue(error)
     }
     
 })

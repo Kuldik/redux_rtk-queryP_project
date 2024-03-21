@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import styles from './CreateRecipe.module.css'
 import { useCreateRecipeMutation } from '../../../store/api/recipe.api'
+import { IRecipeData } from '../../../types/recipe.types'
+import { FormEvent } from 'react'
 
 
 export default function CreateRecipe() {
@@ -10,16 +12,16 @@ export default function CreateRecipe() {
         image: '',
     }
 
-    const [recipe, setResipe] = useState(defaultValues)
+    const [recipe, setResipe] = useState<IRecipeData>(defaultValues)
 
     const [createRecipe] = useCreateRecipeMutation()
     
 
-    const checkInputLength = (name, image) => {
+    const checkInputLength = (name: string, image: string) => {
         return name.length >= 3 && image.length >= 3;
     };
     
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
         if (checkInputLength(recipe.name, recipe.image)) {

@@ -1,8 +1,9 @@
+import { IRecipeData } from "../../types/recipe.types"
 import { api } from "./api"
 
 export const recipeApi = api.injectEndpoints({
     endpoints: (builder) => ({
-        createRecipe: builder.mutation({
+        createRecipe: builder.mutation<null, IRecipeData>({
             query: (recipe) => ({
                 url: '/',
                 method: 'POST',
@@ -14,7 +15,7 @@ export const recipeApi = api.injectEndpoints({
                 }
             ]
             }),
-            renameRecipe: builder.mutation({
+            renameRecipe: builder.mutation<null, IRecipeData>({
                 query: (recipe) => ({
                     url: `/${recipe.name}`,
                     method: 'PUT',
@@ -22,7 +23,7 @@ export const recipeApi = api.injectEndpoints({
                 }),
                 invalidatesTags: ['Recipe']
             }),
-            deleteRecipe: builder.mutation({
+            deleteRecipe: builder.mutation<null, IRecipeData>({
                 query: (id) => ({
                     url: `/${id}`,
                     method: 'DELETE'

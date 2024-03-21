@@ -1,11 +1,12 @@
 import { useGetResipesQuery } from '../store/api/api.js'
-import {RecipeItem } from './Recipe-item/RecipeItem.jsx'
-import {Header} from './header/Header.jsx'
-import CreateRecipe from './mutations/create/CreateRecipe.jsx'
-import  User  from './user/User'
+import {RecipeItem } from './Recipe-item/RecipeItem.js'
+import {Header} from './header/Header.js'
+import CreateRecipe from './mutations/create/CreateRecipe.js'
+import  User  from './user/User.js'
+import { IRecipe } from '../types/recipe.types.js'
 
 function App() {
-  const { isLoading, data} = useGetResipesQuery()
+  const { isLoading, data} = useGetResipesQuery(null)
   return (
     <section>
       <Header/>
@@ -14,7 +15,7 @@ function App() {
       
       <div className='items'>
         {isLoading ? <div className='loading'>Loading...</div> : 
-          data ? data.map((recipe) => 
+          data ? data.map((recipe: IRecipe) => 
             <RecipeItem 
               key={recipe.id} 
               recipe={recipe}
