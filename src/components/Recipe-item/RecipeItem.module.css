@@ -44,11 +44,14 @@
   outline: none;
   border-radius: 0rem 2rem 0 2rem;
 }
+.container .btns {
+  display: flex;
+  justify-content: space-between;
+}
 .container .info {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 120px;
 }/*# sourceMappingURL=RecipeItem.module.css.map */

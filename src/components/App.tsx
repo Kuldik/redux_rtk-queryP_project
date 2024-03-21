@@ -4,6 +4,7 @@ import {Header} from './header/Header.js'
 import CreateRecipe from './mutations/create/CreateRecipe.js'
 import  User  from './user/User.js'
 import { IRecipe } from '../types/recipe.types.js'
+import {DeleteRecipe} from './mutations/delete/DeleteRecipe.js'
 
 function App() {
   const { isLoading, data} = useGetResipesQuery(null)
@@ -12,7 +13,6 @@ function App() {
       <Header/>
       <User/>
       <CreateRecipe/>
-      
       <div className='items'>
         {isLoading ? <div className='loading'>Loading...</div> : 
           data ? data.map((recipe: IRecipe) => 

@@ -4,7 +4,7 @@ import { IUser } from '../../types/user.types'
 const fetchUserById = (userId: number): Promise<IUser>  => 
     new Promise((reolve) => {
         setTimeout(() => {
-            reolve({id: 1, name: 'Alex'})
+            reolve({id: 1, name: 'User Name'})
         }, 1000)
     })
 
